@@ -289,9 +289,9 @@ export const Tools: React.FC<{ isWidget?: boolean }> = ({ isWidget = false }) =>
                 </Menu.Item>
               </Menu.Dropdown>
             </Menu>
-            <StyledToolElement title="Cloud" onClick={() => setVisible("cloud")(true)}>
-              Cloud
-            </StyledToolElement>
+            {/*<StyledToolElement title="Cloud" onClick={() => setVisible("cloud")(true)}>*/}
+            {/*  Cloud*/}
+            {/*</StyledToolElement>*/}
             <StyledToolElement title="Download as File" onClick={handleSave}>
               Download
             </StyledToolElement>

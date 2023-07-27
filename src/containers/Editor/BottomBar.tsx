@@ -1,19 +1,19 @@
 import React from "react";
-import Head from "next/head";
+// import Head from "next/head";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-import { Badge, Flex, Popover, Text } from "@mantine/core";
+// import { Badge, Flex, Popover, Text } from "@mantine/core";
 import toast from "react-hot-toast";
-import {
-  AiOutlineCloudSync,
-  AiOutlineCloudUpload,
-  AiOutlineLink,
-  AiOutlineLock,
-  AiOutlineUnlock,
-} from "react-icons/ai";
-import { MdReportGmailerrorred, MdOutlineCheckCircleOutline } from "react-icons/md";
-import { TbTransform } from "react-icons/tb";
-import { VscAccount, VscSync, VscSyncIgnored, VscWorkspaceTrusted } from "react-icons/vsc";
+// import {
+//   AiOutlineCloudSync,
+//   AiOutlineCloudUpload,
+//   AiOutlineLink,
+//   AiOutlineLock,
+//   AiOutlineUnlock,
+// } from "react-icons/ai";
+// import { MdReportGmailerrorred, MdOutlineCheckCircleOutline } from "react-icons/md";
+// import { TbTransform } from "react-icons/tb";
+// import { VscAccount, VscSync, VscSyncIgnored, VscWorkspaceTrusted } from "react-icons/vsc";
 import { saveToCloud, updateJson } from "src/services/json";
 import useFile from "src/store/useFile";
 import useModal from "src/store/useModal";
@@ -170,102 +170,102 @@ export const BottomBar = () => {
 
   return (
     <StyledBottomBar>
-      {data?.name && (
-        <Head>
-          <title>{data.name} | JSON Crack</title>
-        </Head>
-      )}
-      <StyledLeft>
-        <StyledBottomBarItem onClick={handleLoginClick}>
-          <VscAccount />
-          {user ? user.name : "Login"}
-          {premium && (
-            <Badge size="sm" color="orange" radius="sm" fw="bold">
-              PREMIUM
-            </Badge>
-          )}
-        </StyledBottomBarItem>
-        {!premium && (
-          <StyledBottomBarItem onClick={() => setVisible("premium")(true)}>
-            <VscWorkspaceTrusted />
-            Upgrade to Premium
-          </StyledBottomBarItem>
-        )}
-        <StyledBottomBarItem $error={!!error}>
-          {error ? (
-            <Popover width="auto" shadow="md" position="top" withArrow>
-              <Popover.Target>
-                <Flex align="center" gap={2}>
-                  <MdReportGmailerrorred color="red" size={16} />
-                  <Text fw="bold">Invalid Format</Text>
-                </Flex>
-              </Popover.Target>
-              <Popover.Dropdown sx={{ pointerEvents: "none" }}>
-                <Text size="xs">{error}</Text>
-              </Popover.Dropdown>
-            </Popover>
-          ) : (
-            <Flex align="center" gap={2}>
-              <MdOutlineCheckCircleOutline />
-              <Text>Valid Format</Text>
-            </Flex>
-          )}
-        </StyledBottomBarItem>
-        <StyledBottomBarItem onClick={handleSaveJson} disabled={isUpdating}>
-          {hasChanges ? <AiOutlineCloudUpload /> : <AiOutlineCloudSync />}
-          {hasChanges ? (query?.json ? "Unsaved Changes" : "Create Document") : "Saved"}
-        </StyledBottomBarItem>
-        {data && (
-          <>
-            {typeof data.private !== "undefined" && (
-              <StyledBottomBarItem onClick={setPrivate} disabled={isUpdating}>
-                {isPrivate ? <AiOutlineLock /> : <AiOutlineUnlock />}
-                {isPrivate ? "Private" : "Public"}
-              </StyledBottomBarItem>
-            )}
-            <StyledBottomBarItem onClick={() => setVisible("share")(true)} disabled={isPrivate}>
-              <AiOutlineLink />
-              Share
-            </StyledBottomBarItem>
-          </>
-        )}
-        {liveTransform ? (
-          <StyledBottomBarItem onClick={() => toggleLiveTransform(false)}>
-            <VscSync />
-            <Text>Live Transform</Text>
-          </StyledBottomBarItem>
-        ) : (
-          <StyledBottomBarItem onClick={() => toggleLiveTransform(true)}>
-            <VscSyncIgnored />
-            <Text>Manual Transform</Text>
-          </StyledBottomBarItem>
-        )}
-        {!liveTransform && (
-          <StyledBottomBarItem onClick={() => setContents({})}>
-            <TbTransform />
-            Transform
-          </StyledBottomBarItem>
-        )}
-      </StyledLeft>
+      {/*{data?.name && (*/}
+      {/*  <Head>*/}
+      {/*    <title>{data.name} | JSON Crack</title>*/}
+      {/*  </Head>*/}
+      {/*)}*/}
+      {/*<StyledLeft>*/}
+      {/*  <StyledBottomBarItem onClick={handleLoginClick}>*/}
+      {/*    <VscAccount />*/}
+      {/*    {user ? user.name : "Login"}*/}
+      {/*    {premium && (*/}
+      {/*      <Badge size="sm" color="orange" radius="sm" fw="bold">*/}
+      {/*        PREMIUM*/}
+      {/*      </Badge>*/}
+      {/*    )}*/}
+      {/*  </StyledBottomBarItem>*/}
+      {/*  {!premium && (*/}
+      {/*    <StyledBottomBarItem onClick={() => setVisible("premium")(true)}>*/}
+      {/*      <VscWorkspaceTrusted />*/}
+      {/*      Upgrade to Premium*/}
+      {/*    </StyledBottomBarItem>*/}
+      {/*  )}*/}
+      {/*  <StyledBottomBarItem $error={!!error}>*/}
+      {/*    {error ? (*/}
+      {/*      <Popover width="auto" shadow="md" position="top" withArrow>*/}
+      {/*        <Popover.Target>*/}
+      {/*          <Flex align="center" gap={2}>*/}
+      {/*            <MdReportGmailerrorred color="red" size={16} />*/}
+      {/*            <Text fw="bold">Invalid Format</Text>*/}
+      {/*          </Flex>*/}
+      {/*        </Popover.Target>*/}
+      {/*        <Popover.Dropdown sx={{ pointerEvents: "none" }}>*/}
+      {/*          <Text size="xs">{error}</Text>*/}
+      {/*        </Popover.Dropdown>*/}
+      {/*      </Popover>*/}
+      {/*    ) : (*/}
+      {/*      <Flex align="center" gap={2}>*/}
+      {/*        <MdOutlineCheckCircleOutline />*/}
+      {/*        <Text>Valid Format</Text>*/}
+      {/*      </Flex>*/}
+      {/*    )}*/}
+      {/*  </StyledBottomBarItem>*/}
+      {/*  <StyledBottomBarItem onClick={handleSaveJson} disabled={isUpdating}>*/}
+      {/*    {hasChanges ? <AiOutlineCloudUpload /> : <AiOutlineCloudSync />}*/}
+      {/*    {hasChanges ? (query?.json ? "Unsaved Changes" : "Create Document") : "Saved"}*/}
+      {/*  </StyledBottomBarItem>*/}
+      {/*  {data && (*/}
+      {/*    <>*/}
+      {/*      {typeof data.private !== "undefined" && (*/}
+      {/*        <StyledBottomBarItem onClick={setPrivate} disabled={isUpdating}>*/}
+      {/*          {isPrivate ? <AiOutlineLock /> : <AiOutlineUnlock />}*/}
+      {/*          {isPrivate ? "Private" : "Public"}*/}
+      {/*        </StyledBottomBarItem>*/}
+      {/*      )}*/}
+      {/*      <StyledBottomBarItem onClick={() => setVisible("share")(true)} disabled={isPrivate}>*/}
+      {/*        <AiOutlineLink />*/}
+      {/*        Share*/}
+      {/*      </StyledBottomBarItem>*/}
+      {/*    </>*/}
+      {/*  )}*/}
+      {/*  {liveTransform ? (*/}
+      {/*    <StyledBottomBarItem onClick={() => toggleLiveTransform(false)}>*/}
+      {/*      <VscSync />*/}
+      {/*      <Text>Live Transform</Text>*/}
+      {/*    </StyledBottomBarItem>*/}
+      {/*  ) : (*/}
+      {/*    <StyledBottomBarItem onClick={() => toggleLiveTransform(true)}>*/}
+      {/*      <VscSyncIgnored />*/}
+      {/*      <Text>Manual Transform</Text>*/}
+      {/*    </StyledBottomBarItem>*/}
+      {/*  )}*/}
+      {/*  {!liveTransform && (*/}
+      {/*    <StyledBottomBarItem onClick={() => setContents({})}>*/}
+      {/*      <TbTransform />*/}
+      {/*      Transform*/}
+      {/*    </StyledBottomBarItem>*/}
+      {/*  )}*/}
+      {/*</StyledLeft>*/}
 
-      <StyledRight>
-        <a
-          href="https://www.altogic.com/?utm_source=jsoncrack&utm_medium=referral&utm_campaign=sponsorship"
-          rel="sponsored noreferrer"
-          target="_blank"
-        >
-          <StyledBottomBarItem>
-            Powered by
-            <StyledImg
-              height="20"
-              width="54"
-              src="https://www.altogic.com/img/logo_dark.svg"
-              alt="powered by altogic"
-              $light={lightmode}
-            />
-          </StyledBottomBarItem>
-        </a>
-      </StyledRight>
+      {/*<StyledRight>*/}
+      {/*  <a*/}
+      {/*    href="https://www.altogic.com/?utm_source=jsoncrack&utm_medium=referral&utm_campaign=sponsorship"*/}
+      {/*    rel="sponsored noreferrer"*/}
+      {/*    target="_blank"*/}
+      {/*  >*/}
+      {/*    <StyledBottomBarItem>*/}
+      {/*      Powered by*/}
+      {/*      <StyledImg*/}
+      {/*        height="20"*/}
+      {/*        width="54"*/}
+      {/*        src="https://www.altogic.com/img/logo_dark.svg"*/}
+      {/*        alt="powered by altogic"*/}
+      {/*        $light={lightmode}*/}
+      {/*      />*/}
+      {/*    </StyledBottomBarItem>*/}
+      {/*  </a>*/}
+      {/*</StyledRight>*/}
     </StyledBottomBar>
   );
 };
