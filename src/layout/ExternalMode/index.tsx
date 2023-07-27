@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import { Anchor, Button, Group, Modal, Text } from "@mantine/core";
-// import { VscCode } from "react-icons/vsc";
 
 const StyledAlert = styled.div`
   position: fixed;

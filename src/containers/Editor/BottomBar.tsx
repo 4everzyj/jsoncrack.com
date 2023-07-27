@@ -1,19 +1,7 @@
 import React from "react";
-// import Head from "next/head";
 import { useRouter } from "next/router";
 import styled from "styled-components";
-// import { Badge, Flex, Popover, Text } from "@mantine/core";
 import toast from "react-hot-toast";
-// import {
-//   AiOutlineCloudSync,
-//   AiOutlineCloudUpload,
-//   AiOutlineLink,
-//   AiOutlineLock,
-//   AiOutlineUnlock,
-// } from "react-icons/ai";
-// import { MdReportGmailerrorred, MdOutlineCheckCircleOutline } from "react-icons/md";
-// import { TbTransform } from "react-icons/tb";
-// import { VscAccount, VscSync, VscSyncIgnored, VscWorkspaceTrusted } from "react-icons/vsc";
 import { saveToCloud, updateJson } from "src/services/json";
 import useFile from "src/store/useFile";
 import useModal from "src/store/useModal";
