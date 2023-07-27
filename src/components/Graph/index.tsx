@@ -11,7 +11,6 @@ import useUser from "src/store/useUser";
 import { NodeData } from "src/types/models";
 import { Loading } from "../../layout/Loading";
 import { ErrorView } from "./ErrorView";
-import { PremiumView } from "./PremiumView";
 
 const Canvas = dynamic(() => import("reaflow").then(r => r.Canvas), {
   ssr: false,
@@ -142,9 +141,9 @@ export const Graph = ({ isWidget = false }: GraphProps) => {
 
   if (nodes.length > 6_000) return <ErrorView />;
 
-  if (nodes.length > 400 && !isWidget) {
-    if (!isPremium) return <PremiumView />;
-  }
+  // if (nodes.length > 400 && !isWidget) {
+  //   if (!isPremium) return <PremiumView />;
+  // }
 
   return (
     <>
